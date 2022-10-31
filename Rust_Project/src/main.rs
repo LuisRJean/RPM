@@ -7,8 +7,33 @@ use std::cmp::Ordering;
 
 
 fn main() {
-    let int_u8: u8 = 5;
-    let int2_u8: u8 = 4;
-    let int3_u32: u32 = (int_u8 as u32) + (int2_u8 as u32);
+    enum Day {
+        Monday,
+        Tuesday,
+        Wednesday,
+        Thursday,
+        Friday,
+        Saturday,
+        Sunday,
+    }
+    impl Day {
+        fn is_weekend(&self) -> bool {
+            match self {
+                Day::Saturday | Day::Sunday => true,
+                _ => false,
+            }
+        }
+    }
+    let today:Day = Day::Monday;
+    match today {
+        Day::Monday => println!("Make Mondays Great again!"),
+        Day::Tuesday => println!("Make Tuesdays Great again!"),
+        Day::Wednesday => println!("Make Wednesdays Great again!"),
+        Day::Thursday => println!("Make Thursdays Great again!"),
+        Day::Friday => println!("Make Fridays Great again!"),
+        Day::Saturday => println!("Make Saturdays Great again!"),
+        Day::Sunday => println!("Make Sundays Great again!"),
+    }
+    println!("Is today the weekend {}", today.is_weekend());
 }
  
