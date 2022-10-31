@@ -7,12 +7,20 @@ use std::cmp::Ordering;
 
 
 fn main() {
-    const ONE_MIL: u32 = 1_000_000;
-    const PI: f32 = 3.141592;
-    let age: &str = "20";
-    let mut age: u32 = age.trim().parse()
-        .expect("Please enter a number");
-    age = age + 1;
-    println!("I'm {} and I want ${}", age, ONE_MIL);
-
+    let st3 = String::from("x r t b h k k a m c");
+    let mut v1: Vec<char> = st3.chars().collect();
+    v1.sort();
+    v1.dedup();
+    for char in v1 {
+        println!("{}", char);
+        
+        let st4: &str = "Random String";
+        let mut st5: String =st4.to_string();
+        println!("{}", st5);
+        let byte_arr1 = st5.as_bytes();
+        let st6 = &st5[0..6];
+        println!("String length : {}", st6.len());
+        st5.clear();
+    }
 }
+ 
