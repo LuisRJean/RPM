@@ -21,6 +21,9 @@ fn main() {
         let st6 = &st5[0..6];
         println!("String length : {}", st6.len());
         st5.clear();
+        let st6 = String::from("Just some");
+        let st7 = String::from("Words");
+        let st8 = st6 + &st7;
     }
 }
  
