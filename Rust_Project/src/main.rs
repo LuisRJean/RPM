@@ -24,6 +24,9 @@ fn main() {
         let st6 = String::from("Just some");
         let st7 = String::from("Words");
         let st8 = st6 + &st7;
+        for char in st8.bytes(){
+            println!("{}", char);
+        }
     }
 }
  
