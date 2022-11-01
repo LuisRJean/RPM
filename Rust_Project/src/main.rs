@@ -6,16 +6,15 @@ use std::fs::File;
 use std::cmp::Ordering;
 
 
-fn sum_list(list: &[i32]) -> i32{
-    let mut sum: i32 = 0;
-    for &val in list.iter() {
-        sum += &val;
-    }
-    sum
+use std::ops::Add;
 
+fn get_sum_gen<T:Add<Output = T>>(x: T, y: T) -> T {
+    return x + y;
 }
+
+
 fn main() {
-    let num_list = vec![1,2,3,4,5];
-    println!("Sum of list = {}", sum_list(&num_list));
+    print!("5 + 4 {}", get_sum_gen(5, 4));
+    print!("5.2 + 4.6 {}", get_sum_gen(5.2, 4.6));
 }
  
