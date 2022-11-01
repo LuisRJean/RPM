@@ -6,34 +6,16 @@ use std::fs::File;
 use std::cmp::Ordering;
 
 
+fn sum_list(list: &[i32]) -> i32{
+    let mut sum: i32 = 0;
+    for &val in list.iter() {
+        sum += &val;
+    }
+    sum
+
+}
 fn main() {
-    enum Day {
-        Monday,
-        Tuesday,
-        Wednesday,
-        Thursday,
-        Friday,
-        Saturday,
-        Sunday,
-    }
-    impl Day {
-        fn is_weekend(&self) -> bool {
-            match self {
-                Day::Saturday | Day::Sunday => true,
-                _ => false,
-            }
-        }
-    }
-    let today:Day = Day::Monday;
-    match today {
-        Day::Monday => println!("Make Mondays Great again!"),
-        Day::Tuesday => println!("Make Tuesdays Great again!"),
-        Day::Wednesday => println!("Make Wednesdays Great again!"),
-        Day::Thursday => println!("Make Thursdays Great again!"),
-        Day::Friday => println!("Make Fridays Great again!"),
-        Day::Saturday => println!("Make Saturdays Great again!"),
-        Day::Sunday => println!("Make Sundays Great again!"),
-    }
-    println!("Is today the weekend {}", today.is_weekend());
+    let num_list = vec![1,2,3,4,5];
+    println!("Sum of list = {}", sum_list(&num_list));
 }
  
