@@ -21,7 +21,7 @@ fn change_string(name: & mut String){
 }
 
 fn main() {
-    let str1 = String::from("Luis");
+    let mut str1 = String::from("Luis");
     change_string(&mut str1);
 }
  
